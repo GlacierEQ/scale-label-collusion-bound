@@ -1,1 +1,14 @@
-{"capabilities": ["hyper-scaling"]}
+{
+  "schema": "glaciereq.repo-capabilities.v1",
+  "repository": "GlacierEQ/scale-label-collusion-bound",
+  "family": "annotator_agreement_anomaly_screening",
+  "capabilities": [
+    "independent_marginal_chance_baseline",
+    "pairwise_agreement_lift",
+    "minimum_overlap_gate",
+    "annotation_identity_uniqueness_guard",
+    "policy_bound_pair_receipt",
+    "python_c_statistical_parity"
+  ],
+  "truth_boundary": "Deterministic agreement-anomaly screening only. A flag is not proof of collusion or misconduct. The repo does not authenticate annotators, detect train/eval contamination, allocate annotation budgets, execute labeling jobs, or claim Scale AI adoption."
+}
