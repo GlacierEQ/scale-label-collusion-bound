@@ -1,0 +1,31 @@
+{
+  "schema": "glaciereq.canonical-position-proof.v1",
+  "repository": "GlacierEQ/scale-label-collusion-bound",
+  "gate": "CANONICAL_POSITION_RESOLVED",
+  "result": "PASS",
+  "tested_source_sha": "03602689bdd86c81759671c74c107bf1e4d99748",
+  "workflow": {
+    "provider": "github-actions",
+    "run_id": 31390813501,
+    "python": "success",
+    "native_c": "success"
+  },
+  "observed_scope": [
+    "independent annotator-specific marginal chance baseline",
+    "pairwise agreement lift and minimum-overlap gate",
+    "duplicate/malformed annotation refusal",
+    "input and policy fingerprint binding",
+    "Python and native C statistical baseline",
+    "anomaly-versus-misconduct claim ceiling",
+    "canonical role and non-integration boundary"
+  ],
+  "canonical_role": "CANONICAL_SPECIALIST:pairwise_annotator_agreement_anomaly_screening",
+  "limitations": [
+    "screening signal only; not proof of collusion or misconduct",
+    "no annotator identity authentication",
+    "no multiple-comparison correction yet",
+    "no exercised integration with contamination or budget siblings",
+    "no Scale AI affiliation or adoption claim"
+  ],
+  "receipt_commit_policy": "Final receipt-inclusive PR-head Python and native C CI must pass before merge."
+}
