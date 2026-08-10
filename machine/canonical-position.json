@@ -1,0 +1,64 @@
+{
+  "schema": "glaciereq.repo-canonical-position.v1",
+  "repository": "GlacierEQ/scale-label-collusion-bound",
+  "position_state": "RESOLVED",
+  "role": "CANONICAL_SPECIALIST",
+  "company_target": "Scale AI",
+  "canonical_identity": "label-collusion-bound",
+  "owns": "pairwise_annotator_agreement_anomaly_screening",
+  "unique_value": [
+    "observed pairwise agreement is compared against independent annotator-specific marginal chance agreement",
+    "minimum shared-item overlap gates whether a pair is evaluated",
+    "agreement lift is evaluated against an explicit screening margin",
+    "duplicate annotator/item annotations and malformed identity dimensions fail closed",
+    "input and policy identity are bound into deterministic pair and report receipts",
+    "Python and native C share the corrected independent-marginal statistical baseline"
+  ],
+  "does_not_own": [
+    "proof or adjudication of collusion/misconduct",
+    "annotator identity authentication",
+    "train/eval contamination detection",
+    "annotation budget allocation",
+    "labeling-job execution or disciplinary action"
+  ],
+  "capability_contribution": {
+    "family": "annotator_agreement_anomaly_screening",
+    "extractable_mechanisms": [
+      "independent_marginal_chance_baseline",
+      "pairwise_agreement_lift",
+      "minimum_overlap_gate",
+      "annotation_identity_uniqueness_guard",
+      "policy_bound_pair_receipt",
+      "python_c_statistical_parity"
+    ],
+    "ownership": "Canonical Scale-AI-lens specialist for deterministic pairwise annotator agreement anomaly screening, not misconduct adjudication."
+  },
+  "relationships": [
+    {
+      "repository": "GlacierEQ/scale-eval-poison-sentinel",
+      "relation": "COMPOSES_WITH",
+      "integration_exercised": false,
+      "boundary": "evaluation-set contamination is distinct from anomalous annotator agreement"
+    },
+    {
+      "repository": "GlacierEQ/scale-agreement-budget-allocator",
+      "relation": "COMPOSES_WITH",
+      "integration_exercised": false,
+      "boundary": "budget allocation may eventually consume quality-risk evidence but no such integration is exercised"
+    }
+  ],
+  "next_evolution": "Add uncertainty intervals/multiple-comparison controls and investigator-facing evidence bundles before any higher-order collusion-risk claim; preserve anomaly-vs-misconduct separation.",
+  "evidence_refs": [
+    "src/collusion_bound.py",
+    "native/collusion.c",
+    "tests/test_collusion_bound.py",
+    "native/collusion_test.c",
+    "ISSUE_CONTRACT.md"
+  ],
+  "nonclaims": [
+    "no Scale AI affiliation",
+    "flagged agreement is not proof of collusion or misconduct",
+    "not a production Scale AI labeling-integrity service",
+    "no exercised integration with contamination or budget sibling repositories"
+  ]
+}
