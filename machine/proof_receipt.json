@@ -1,0 +1,31 @@
+{
+  "schema": "glaciereq.proof-receipt.v1",
+  "repository": "GlacierEQ/scale-label-collusion-bound",
+  "source_sha": "5d81a106c8c20ac9385f6e314df07522d29a7873141045cc8183fea3c8b9c2ed",
+  "proof_id": "elite-scale-label-collusion-bound-1786335149",
+  "environment": {
+    "python": "/Users/kcbflux/job-app/excellence/.venv-elite/bin/python",
+    "PYTHONPATH": "/Users/kcbflux/job-app/repos/scale-label-collusion-bound:/Users/kcbflux/job-app/repos/scale-label-collusion-bound/src",
+    "entry": "unittest"
+  },
+  "tests": [
+    "/Users/kcbflux/job-app/excellence/.venv-elite/bin/python -m unittest discover -s tests -v (x2)"
+  ],
+  "adversarial_tests": [
+    "tests/test_adversarial.py"
+  ],
+  "runtime": {
+    "operate": "scripts/operate.py (x2)",
+    "dual_run_ok": true,
+    "proof_dual_run_ok": true
+  },
+  "result": "PASS",
+  "limitations": [
+    "not production deployed",
+    "reference implementation only"
+  ],
+  "timestamp": "2026-08-10T04:12Z",
+  "artifact_hashes": {
+    "operability_receipt": "89516bf5a9b7eda7f8024466f36327f54bf3bff2ec2e911fec8caa22415449ea"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "glaciereq.operability-receipt.v1",
+  "repository": "GlacierEQ/scale-label-collusion-bound",
+  "at": "2026-08-10T04:12Z",
+  "source_sha": "5d81a106c8c20ac9385f6e314df07522d29a7873141045cc8183fea3c8b9c2ed",
+  "entry": "scripts/operate.py",
+  "primary_output": {
+    "module": "collusion_bound",
+    "ok": true,
+    "repository": "GlacierEQ/scale-label-collusion-bound",
+    "smoke": {
+      "args": [
+        "[Annotation(annotator_id='sample_annotat"
+      ],
+      "content_checked": true,
+      "invoked": true,
+      "kind": "class",
+      "method": "analyze",
+      "module_local": true,
+      "name": "LabelCollusionBound",
+      "result": "CollusionReport(pairs=(), flagged_pairs=(), fingerprint='9f25478f82663230a127604dc37efbe852de01af6821aa6b98d4d619f4f9c68f')"
+    }
+  },
+  "dual_run_ok": true,
+  "result": "PASS"
+}
