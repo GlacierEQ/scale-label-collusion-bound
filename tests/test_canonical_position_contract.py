@@ -14,6 +14,7 @@ def load(path: str):
 CANONICAL = load("machine/canonical-position.json")
 CAPABILITIES = load("machine/capabilities.json")
 TARGET = load("machine/target-contract.json")
+PROOF = load("machine/canonical-position-proof.json")
 
 
 class CanonicalPositionContractTests(unittest.TestCase):
@@ -36,10 +37,12 @@ class CanonicalPositionContractTests(unittest.TestCase):
         self.assertIn("policy_bound_pair_receipt", capabilities)
         self.assertIn("python_c_statistical_parity", capabilities)
 
-    def test_target_waits_for_exact_head_proof(self):
-        self.assertEqual(TARGET["current"]["state"], "PROMOTED")
-        self.assertTrue(TARGET["current"]["canonical_position_pending_exact_head_proof"])
-        self.assertEqual(TARGET["promotion"]["next_gate"], "CANONICAL_POSITION_RESOLVED")
+    def test_target_reflects_earned_canonical_position(self):
+        self.assertEqual(TARGET["current"]["state"], "EVOLVING")
+        self.assertFalse(TARGET["current"]["canonical_position_pending_exact_head_proof"])
+        self.assertEqual(TARGET["promotion"]["next_gate"], "EVOLUTION_CURSOR_DEFINED")
+        self.assertEqual(PROOF["result"], "PASS")
+        self.assertEqual(PROOF["tested_source_sha"], "03602689bdd86c81759671c74c107bf1e4d99748")
 
     def test_truth_boundary_keeps_anomaly_separate_from_misconduct(self):
         boundary = CAPABILITIES["truth_boundary"]
