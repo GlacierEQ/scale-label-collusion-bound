@@ -2,21 +2,55 @@
   "schema": "glaciereq.repo-target-contract.v1",
   "identity": {
     "repository_id": "GlacierEQ/scale-label-collusion-bound",
-    "family": "elite-estate"
+    "family": "annotator_agreement_anomaly_screening"
   },
   "current": {
     "state": "PROMOTED",
     "implemented": true,
     "tested": true,
-    "deployed": false
+    "deployed": false,
+    "canonical_position_pending_exact_head_proof": true
   },
-  "nonclaims": [
-    "no employer affiliation",
-    "no production deployment without receipt"
+  "target": {
+    "purpose": "Screen annotator pairs for unusually high agreement relative to independent annotator-specific empirical marginals, producing deterministic evidence without converting an anomaly into a misconduct finding.",
+    "central_bottleneck": "Raw agreement can look suspicious or benign simply because annotators have different label marginals; integrity screening needs a chance-adjusted, overlap-bounded, reproducible signal with an explicit claim ceiling.",
+    "success": [
+      "Chance agreement uses independent annotator-specific empirical marginals.",
+      "Pairs below the minimum shared-item overlap are not screened.",
+      "Observed agreement lift is compared with an explicit margin policy.",
+      "Duplicate annotator/item rows and malformed dimensions fail closed.",
+      "Input and policy identity are bound into pair/report receipts.",
+      "Python and C preserve the corrected statistical baseline.",
+      "A flag remains an anomaly requiring investigation, not proof of misconduct."
+    ]
+  },
+  "invariants": [
+    "one annotation per annotator/item identity",
+    "non-empty annotator/item/label dimensions",
+    "finite bounded screening margin",
+    "positive minimum overlap",
+    "independent-marginal expected agreement baseline",
+    "input and policy identities are receipt-bound",
+    "screening result never implies misconduct adjudication"
   ],
   "donor_plan": {
-    "mode": "none",
-    "donors": []
+    "status": "RESOLVED",
+    "strategy": "INDEPENDENT_MECHANISM_PRESERVED",
+    "donors": [],
+    "basis": "This repository owns pairwise agreement-anomaly screening; Scale-lens siblings own evaluation contamination and annotation-budget allocation."
   },
-  "frozen_at": "2026-08-10T04:12Z"
+  "promotion": {
+    "required_tests": ["python-unit", "python-adversarial", "native-c", "canonical-position"],
+    "require_exact_source_sha": true,
+    "require_receipt": true,
+    "require_nonclaims": true,
+    "next_gate": "CANONICAL_POSITION_RESOLVED"
+  },
+  "nonclaims": [
+    "no Scale AI affiliation",
+    "flagged agreement is not proof of collusion or misconduct",
+    "not a production Scale AI labeling-integrity service",
+    "no annotator identity authentication or disciplinary action",
+    "no exercised integration with contamination or annotation-budget siblings"
+  ]
 }
